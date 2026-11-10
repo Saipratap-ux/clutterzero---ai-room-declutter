@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: clutterzero-ai-api
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FRONTEND_ORIGIN
+        value: https://saipratap-ux.github.io,http://localhost:5173
