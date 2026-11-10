@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Upload, Camera, Zap, Heart, Brain, Minimize2, Users, ArrowRight, Image as ImageIcon, Sparkles, CheckCircle2 } from 'lucide-react';
-import { StrategyType, SampleRoom } from '../types/declutter';
-import { SAMPLE_ROOMS } from '../data/sampleRooms';
+import { StrategyType, SampleRoom } from './declutter';
+import { SAMPLE_ROOMS } from './sampleRooms';
 
 interface UploadSectionProps {
   onAnalyze: (data: {
