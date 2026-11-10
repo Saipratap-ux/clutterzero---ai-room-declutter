@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PhasedActionPlan, ChecklistTask } from '../types/declutter';
+import { PhasedActionPlan, ChecklistTask } from './declutter';
 import {
   CheckCircle2,
   Clock,
