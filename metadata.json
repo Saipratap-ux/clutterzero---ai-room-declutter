@@ -1,0 +1,6 @@
+{
+  "name": "ClutterZero - AI Room Declutter & Organization Coach",
+  "description": "Upload photos of your rooms to get spatial AI analysis, actionable 4-box decluttering plans, interactive hotspot overlays, and custom organization systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
