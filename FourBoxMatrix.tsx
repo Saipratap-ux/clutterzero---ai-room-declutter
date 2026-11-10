@@ -1,5 +1,5 @@
 import React from 'react';
-import { FourBoxSorting } from '../types/declutter';
+import { FourBoxSorting } from './declutter';
 import { Check, CheckCircle2, Home, ArrowRightLeft, Gift, Trash2 } from 'lucide-react';
 
 interface FourBoxMatrixProps {
