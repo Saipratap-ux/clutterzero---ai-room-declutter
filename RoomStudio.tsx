@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RoomAnalysisResult, PhasedActionPlan } from '../types/declutter';
+import { RoomAnalysisResult, PhasedActionPlan } from './declutter';
 import { RoomPhotoAnnotator } from './RoomPhotoAnnotator';
 import { FourBoxMatrix } from './FourBoxMatrix';
 import { ActionChecklist } from './ActionChecklist';
