@@ -1,5 +1,5 @@
 import React from 'react';
-import { StorageSolution } from '../types/declutter';
+import { StorageSolution } from './declutter';
 import { Box, DollarSign, MapPin, CheckCircle, Lightbulb } from 'lucide-react';
 
 interface StorageRecommendationsProps {
