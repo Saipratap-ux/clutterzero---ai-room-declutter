@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HotspotItem } from '../types/declutter';
+import { HotspotItem } from './declutter';
 import { Eye, EyeOff, AlertTriangle, ArrowRight, Tag, Check, Sparkles } from 'lucide-react';
 
 interface RoomPhotoAnnotatorProps {
