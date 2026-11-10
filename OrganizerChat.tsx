@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { RoomAnalysisResult, ChatMessage } from '../types/declutter';
+import { RoomAnalysisResult, ChatMessage } from './declutter';
 import { Send, Bot, User, Sparkles, MessageSquare } from 'lucide-react';
 
 interface OrganizerChatProps {
@@ -50,7 +50,9 @@ export const OrganizerChat: React.FC<OrganizerChatProps> = ({ roomContext }) => 
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/room-chat', {
+      const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+      if (!apiBaseUrl) throw new Error('AI service is not configured');
+      const response = await fetch(`${apiBaseUrl}/api/room-chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
