@@ -4,16 +4,17 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
-import { UploadSection } from './components/UploadSection';
-import { RoomStudio } from './components/RoomStudio';
-import { SavedRoomsDrawer } from './components/SavedRoomsDrawer';
-import { PrintableReport } from './components/PrintableReport';
-import { RoomAnalysisResult, StrategyType } from './types/declutter';
-import { SAMPLE_ROOMS } from './data/sampleRooms';
+import { Navbar } from './Navbar';
+import { UploadSection } from './UploadSection';
+import { RoomStudio } from './RoomStudio';
+import { SavedRoomsDrawer } from './SavedRoomsDrawer';
+import { PrintableReport } from './PrintableReport';
+import { RoomAnalysisResult, StrategyType } from './declutter';
+import { SAMPLE_ROOMS } from './sampleRooms';
 import { AlertCircle, X, Sparkles } from 'lucide-react';
 
 const STORAGE_KEY = 'clutterzero_saved_rooms';
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<'upload' | 'studio' | 'history'>('upload');
@@ -61,7 +62,10 @@ export default function App() {
     setErrorMessage(null);
 
     try {
-      const response = await fetch('/api/analyze-room', {
+      if (!API_BASE_URL) {
+        throw new Error('AI service is not configured. Deploy the backend and set the VITE_API_BASE_URL GitHub Actions variable.');
+      }
+      const response = await fetch(`${API_BASE_URL}/api/analyze-room`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
