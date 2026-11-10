@@ -1,5 +1,5 @@
 import React from 'react';
-import { RoomAnalysisResult } from '../types/declutter';
+import { RoomAnalysisResult } from './declutter';
 import { Printer, X, Sparkles, CheckSquare } from 'lucide-react';
 
 interface PrintableReportProps {
