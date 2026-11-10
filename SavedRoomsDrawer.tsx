@@ -1,5 +1,5 @@
 import React from 'react';
-import { RoomAnalysisResult } from '../types/declutter';
+import { RoomAnalysisResult } from './declutter';
 import { Trash2, ExternalLink, Calendar, CheckCircle2, AlertCircle, Plus } from 'lucide-react';
 
 interface SavedRoomsDrawerProps {
